@@ -1,7 +1,50 @@
+:root {
+  --primary-color: #3f8efc;
+}
+
 * {
   font-family: "Caveat", cursive;
 }
 
 .navbar {
   background-color: #87bfff;
+}
+
+.title-text {
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+}
+
+#audio-btn {
+  background-color: #add7f6;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#audio-btn:hover {
+  background-color: #2667ff;
+}
+
+.highscore-btn {
+  background-color: var(--primary-color);
+  border: none;
+  height: 50px;
+  width: 200px;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.highscore-btn:hover {
+  background-color: #2667ff;
+}
+
+.highscore-btn:active {
+  background-color: #2667ff;
+}
+
+.offcanvas-title {
+  font-size: 2rem;
+  font-weight: bold;
 }
