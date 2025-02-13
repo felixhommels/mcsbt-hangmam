@@ -10,7 +10,6 @@ import { Volume2, VolumeX } from "lucide-react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 
 const languages = [
   { code: "en", name: "English", flag: "🇺🇸" },

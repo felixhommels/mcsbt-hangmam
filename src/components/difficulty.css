@@ -1,0 +1,67 @@
+#difficulty-col {
+  display: flex;
+  justify-content: space-around;
+}
+
+#difficulty-col button {
+  width: 180px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+#easy-btn {
+  background-color: #98d8a0;
+}
+
+#medium-btn {
+  background-color: #ffb384;
+}
+
+#hard-btn {
+  background-color: #ff9a9a;
+}
+
+#easy-btn:hover,
+#easy-btn:active {
+  background-color: green;
+}
+
+#medium-btn:hover,
+#medium-btn:active {
+  background-color: orange;
+}
+
+#hard-btn:hover,
+#hard-btn:active {
+  background-color: red;
+}
+
+#difficulty-row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pulsate {
+  animation: pulsate 1.2s infinite ease-in-out;
+}
