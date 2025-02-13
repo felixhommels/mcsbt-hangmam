@@ -19,7 +19,6 @@ const languages = [
   { code: "it", name: "Italiano", flag: "🇮🇹" },
   { code: "pt", name: "Português", flag: "🇵🇹" },
   { code: "pt-br", name: "Português (Brasil)", flag: "🇧🇷" },
-  { code: "zh", name: "中國人", flag: "🇨🇳" },
 ];
 
 function Header() {

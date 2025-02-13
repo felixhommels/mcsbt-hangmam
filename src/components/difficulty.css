@@ -1,3 +1,8 @@
+#difficulty-container {
+  background-color: #add7f6;
+  padding: 20px;
+}
+
 #difficulty-col {
   display: flex;
   justify-content: space-around;
@@ -42,11 +47,6 @@
   background-color: red;
 }
 
-#difficulty-row {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 @keyframes pulsate {
   0% {
     transform: scale(1);
@@ -64,4 +64,16 @@
 
 .pulsate {
   animation: pulsate 1.2s infinite ease-in-out;
+}
+
+#play-btn {
+  background-color: #87bfff;
+  border: none;
+  cursor: pointer;
+}
+
+#restart-btn {
+  background-color: #87bfff;
+  border: none;
+  cursor: pointer;
 }

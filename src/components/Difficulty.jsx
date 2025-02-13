@@ -4,8 +4,10 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import "./difficulty.css";
+import { CirclePlay, RotateCcw } from "lucide-react";
 
 function Difficulty() {
+  // Difficulty Functions
   const [difficulty, setDifficulty] = useState("easy");
   const [isClicked, setIsClicked] = useState(false);
 
@@ -13,8 +15,16 @@ function Difficulty() {
     setDifficulty(difficulty);
   };
 
+  const handleStart = () => {
+    console.log("Start");
+  };
+
+  const handleRestart = () => {
+    console.log("Restart");
+  };
+
   return (
-    <Container fluid>
+    <Container fluid id="difficulty-container">
       <Row className="w-100" id="difficulty-row">
         <Col className="d-flex" id="difficulty-col">
           <Button
@@ -38,6 +48,8 @@ function Difficulty() {
           >
             Hard
           </Button>
+          <Button className="utility-btn">Start</Button>
+          <Button className="utility-btn">Restart</Button>
         </Col>
       </Row>
     </Container>
