@@ -9,6 +9,19 @@ import { motion } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+
+const languages = [
+  { code: "en", name: "English", flag: "🇺🇸" },
+  { code: "es", name: "Español", flag: "🇪🇸" },
+  { code: "fr", name: "Français", flag: "🇫🇷" },
+  { code: "de", name: "Deutsch", flag: "🇩🇪" },
+  { code: "it", name: "Italiano", flag: "🇮🇹" },
+  { code: "pt", name: "Português", flag: "🇵🇹" },
+  { code: "pt-br", name: "Português (Brasil)", flag: "🇧🇷" },
+  { code: "zh", name: "中國人", flag: "🇨🇳" },
+];
 
 function Header() {
   //   Audio Functions
@@ -32,6 +45,13 @@ function Header() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // Language Functions
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+
+  const handleLanguageChange = (language) => {
+    setSelectedLanguage(language);
+  };
 
   return (
     <Container fluid className="navbar py-4">
@@ -76,6 +96,21 @@ function Header() {
               {/* Add your highscores content here with element creation */}
             </Offcanvas.Body>
           </Offcanvas>
+          <Dropdown>
+            <Dropdown.Toggle className="language-dropdown">
+              {`${selectedLanguage.flag} ${selectedLanguage.name}`}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              {languages.map((language) => (
+                <Dropdown.Item
+                  key={language.code}
+                  onClick={() => handleLanguageChange(language)}
+                >
+                  {`${language.flag} ${language.name}`}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
           <button
             id="audio-btn"
             onClick={toggleAudio}

@@ -27,13 +27,18 @@
   background-color: #2667ff;
 }
 
-.highscore-btn {
+.highscore-btn,
+.language-dropdown {
   background-color: var(--primary-color);
   border: none;
   height: 50px;
   width: 200px;
   font-size: 1.7rem;
   font-weight: bold;
+}
+
+.language-dropdown:hover {
+  background-color: #2667ff;
 }
 
 .highscore-btn:hover {
