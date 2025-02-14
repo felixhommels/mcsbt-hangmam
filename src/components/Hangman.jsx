@@ -17,7 +17,7 @@ function Hangman() {
       <Row>
         <Col>
           <img
-            src="./images/hangmanexample.png"
+            src="./images/hangman11.png"
             alt="hangman1"
             style={{ width: "80%" }}
           />
