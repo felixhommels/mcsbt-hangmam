@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hangman from "./components/Hangman";
 import Difficulty from "./components/Difficulty";
@@ -13,14 +13,17 @@ function App() {
   const [lives, setLives] = useState(11);
   const [gameStatus, setGameStatus] = useState("loading");
   const [difficulty, setDifficulty] = useState("easy");
+  const [language, setLanguage] = useState("en");
 
-  const getRandomWord = async () => {
+  const getRandomWord = async (language) => {
+    const baseUrl = "https://random-word-api.herokuapp.com/word";
+    const url = language === "en" ? baseUrl : `${baseUrl}?lang=${language}`;
+
     try {
-      const response = await fetch(
-        "https://random-word-api.herokuapp.com/word"
-      );
+      const response = await fetch(url);
       const data = await response.json();
-      return data[0];
+      console.log(data);
+      return data[0].toUpperCase();
     } catch (error) {
       console.error("Error fetching random word:", error);
       return "REACT";
@@ -28,7 +31,7 @@ function App() {
   };
 
   const startGame = () => {
-    getRandomWord().then((word) => {
+    getRandomWord(language).then((word) => {
       setWord(word);
       setGameStatus("playing");
       setGuessedLetters([]);
@@ -40,7 +43,7 @@ function App() {
     setGuessedLetters([]);
     setLives(11);
     setGameStatus("loading");
-    getRandomWord().then((word) => {
+    getRandomWord(language).then((word) => {
       setWord(word);
       setGameStatus("playing");
     });
@@ -56,11 +59,15 @@ function App() {
     setLives(lives[difficulty]);
   };
 
+  const handleLanguage = (language) => {
+    setLanguage(language);
+  };
+
   return (
     <Container fluid className="px-0">
       <Row>
         <Col>
-          <Header />
+          <Header language={language} setLanguage={setLanguage} />
         </Col>
       </Row>
       <Row>
@@ -69,6 +76,7 @@ function App() {
             startGame={startGame}
             resetGame={resetGame}
             handleDifficulty={handleDifficulty}
+            language={language}
           />
         </Col>
       </Row>
@@ -84,6 +92,7 @@ function App() {
             gameStatus={gameStatus}
             setGameStatus={setGameStatus}
             getRandomWord={getRandomWord}
+            language={language}
           />
         </Col>
       </Row>

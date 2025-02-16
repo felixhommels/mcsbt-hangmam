@@ -10,6 +10,7 @@ import { Volume2, VolumeX } from "lucide-react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
+import languageText from "../../language_text.json";
 
 const languages = [
   { code: "en", name: "English", flag: "🇺🇸" },
@@ -18,10 +19,10 @@ const languages = [
   { code: "de", name: "Deutsch", flag: "🇩🇪" },
   { code: "it", name: "Italiano", flag: "🇮🇹" },
   { code: "pt", name: "Português", flag: "🇵🇹" },
-  { code: "pt-br", name: "Português (Brasil)", flag: "🇧🇷" },
+  { code: "pt-br", name: "Português", flag: "🇧🇷" },
 ];
 
-function Header() {
+function Header({ language, setLanguage, onReset }) {
   //   Audio Functions
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio("./audio/hangman_audio.mp3"));
@@ -49,6 +50,8 @@ function Header() {
 
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
+    setLanguage(language.code);
+    onReset();
   };
 
   return (
@@ -73,7 +76,7 @@ function Header() {
               ease: "easeInOut",
             }}
           >
-            Hangman
+            {languageText[language].title}
           </motion.h1>
         </Col>
         <Col className="d-flex align-items-center justify-content-end">
@@ -82,12 +85,12 @@ function Header() {
             onClick={handleShow}
             className="highscore-btn me-2"
           >
-            Highscores
+            {languageText[language].highscores}
           </Button>
           <Offcanvas show={show} onHide={handleClose} placement="end">
             <Offcanvas.Header closeButton>
               <Offcanvas.Title className="offcanvas-title">
-                Highscores
+                {languageText[language].highscores}
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>

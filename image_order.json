@@ -1,0 +1,38 @@
+{
+  "easy": {
+    "images": {
+      "11": "hangman1.png",
+      "10": "hangman2.png",
+      "9": "hangman3.png",
+      "8": "hangman4.png",
+      "7": "hangman5.png",
+      "6": "hangman6.png",
+      "5": "hangman7.png",
+      "4": "hangman8.png",
+      "3": "hangman9.png",
+      "2": "hangman10.png",
+      "1": "hangman11.png"
+    }
+  },
+  "medium": {
+    "images": {
+      "8": "hangman1.png",
+      "7": "hangman3.png",
+      "6": "hangman5.png",
+      "5": "hangman6.png",
+      "4": "hangman7.png",
+      "3": "hangman8.png",
+      "2": "hangman10.png",
+      "1": "hangman11.png"
+    }
+  },
+  "hard": {
+    "images": {
+      "5": "hangman1.png",
+      "4": "hangman4.png",
+      "3": "hangman6.png",
+      "2": "hangman9.png",
+      "1": "hangman11.png"
+    }
+  }
+}

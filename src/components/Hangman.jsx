@@ -4,6 +4,8 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "./Hangman.css";
 import { useState, useEffect } from "react";
+import languageText from "../../language_text.json";
+import imageMapping from "../../image_order.json";
 
 const Keyboard = ({ guessedLetters, onLetterClick }) => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -46,6 +48,8 @@ function Hangman({
   gameStatus,
   setGameStatus,
   getRandomWord,
+  language,
+  difficulty,
 }) {
   const maskedWord = word
     .split("")
@@ -65,7 +69,7 @@ function Hangman({
   };
 
   useEffect(() => {
-    getRandomWord().then((word) => {
+    getRandomWord(language).then((word) => {
       setWord(word);
       setGameStatus("playing");
     });
@@ -81,21 +85,26 @@ function Hangman({
     });
   };
 
+  const getHangmanImage = (lives, difficulty) => {
+    const difficultyImages = imageMapping[difficulty]?.images;
+    if (!difficultyImages) return "./images/hangman11.png"; // fallback image
+
+    const imageName = difficultyImages[lives];
+    return imageName ? `./images/${imageName}` : "./images/hangman11.png";
+  };
+
   return (
     <Container fluid>
       <Row id="description" className="text-center">
         <Col>
-          <h2 id="instructions-text">
-            Guess the hidden word before the man in hanged! The harder the
-            level, the less lives you have. Choose wisely!
-          </h2>
+          <h2 id="instructions-text">{languageText[language].instructions}</h2>
         </Col>
       </Row>
       <Row>
         <Col>
           <img
-            src="./images/hangman11.png"
-            alt="hangman1"
+            src={getHangmanImage(lives, difficulty)}
+            alt={`hangman with ${lives} lives remaining`}
             style={{ width: "80%" }}
           />
         </Col>
@@ -119,7 +128,9 @@ function Hangman({
           </Row>
           <Row>
             <Col>
-              <h3 id="lives-text">Lives: {lives}</h3>
+              <h3 id="lives-text">
+                {languageText[language].lives} {lives}
+              </h3>
             </Col>
           </Row>
         </Col>

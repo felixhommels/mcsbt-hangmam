@@ -4,9 +4,9 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import "./difficulty.css";
-import { CirclePlay, RotateCcw } from "lucide-react";
+import languageText from "../../language_text.json";
 
-function Difficulty({ startGame, resetGame, handleDifficulty }) {
+function Difficulty({ startGame, resetGame, handleDifficulty, language }) {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleDifficultyClick = (difficultyLevel) => {
@@ -32,27 +32,27 @@ function Difficulty({ startGame, resetGame, handleDifficulty }) {
             onClick={() => handleDifficultyClick("easy")}
             className={!isClicked ? "pulsate" : ""}
           >
-            Easy
+            {languageText[language].easy}
           </Button>
           <Button
             id="medium-btn"
             onClick={() => handleDifficultyClick("medium")}
             className={!isClicked ? "pulsate" : ""}
           >
-            Medium
+            {languageText[language].medium}
           </Button>
           <Button
             id="hard-btn"
             onClick={() => handleDifficultyClick("hard")}
             className={!isClicked ? "pulsate" : ""}
           >
-            Hard
+            {languageText[language].hard}
           </Button>
           <Button className="utility-btn" onClick={handleStart}>
-            Start
+            {languageText[language].start}
           </Button>
           <Button className="utility-btn" onClick={handleRestart}>
-            Restart
+            {languageText[language].restart}
           </Button>
         </Col>
       </Row>

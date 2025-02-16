@@ -1,0 +1,79 @@
+{
+  "en": {
+    "title": "Hangman",
+    "highscores": "Highscores",
+    "start": "Start",
+    "restart": "Restart",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "instructions": "Guess the hidden word before the man is hanged! The harder the level, the fewer lives you have. Choose wisely!",
+    "lives": "Lives:"
+  },
+  "fr": {
+    "title": "Pendu",
+    "highscores": "Meilleurs scores",
+    "start": "Commencer",
+    "restart": "Recommencer",
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Difficile",
+    "instructions": "Devinez le mot caché avant que l'homme ne soit pendu ! Plus le niveau est difficile, moins vous avez de vies. Choisissez judicieusement !",
+    "lives": "Vies:"
+  },
+  "es": {
+    "title": "Ahorcado",
+    "highscores": "Puntuaciones altas",
+    "start": "Iniciar",
+    "restart": "Reiniciar",
+    "easy": "Fácil",
+    "medium": "Medio",
+    "hard": "Difícil",
+    "instructions": "¡Adivina la palabra oculta antes de que el hombre sea ahorcado! Cuanto más difícil sea el nivel, menos vidas tendrás. ¡Elige sabiamente!",
+    "lives": "Vidas:"
+  },
+  "it": {
+    "title": "Impiccato",
+    "highscores": "Punteggi migliori",
+    "start": "Inizia",
+    "restart": "Ricomincia",
+    "easy": "Facile",
+    "medium": "Medio",
+    "hard": "Difficile",
+    "instructions": "Indovina la parola nascosta prima che l'uomo venga impiccato! Più il livello è difficile, meno vite hai. Scegli saggiamente!",
+    "lives": "Vite:"
+  },
+  "de": {
+    "title": "Galgenmännchen",
+    "highscores": "Bestenliste",
+    "start": "Starten",
+    "restart": "Neustart",
+    "easy": "Einfach",
+    "medium": "Mittel",
+    "hard": "Schwer",
+    "instructions": "Errate das versteckte Wort, bevor der Mann gehängt wird! Je schwieriger das Level, desto weniger Leben hast du. Wähle weise!",
+    "lives": "Leben:"
+  },
+  "pt": {
+    "title": "Forca",
+    "highscores": "Melhores Pontuações",
+    "start": "Começar",
+    "restart": "Reiniciar",
+    "easy": "Fácil",
+    "medium": "Médio",
+    "hard": "Difícil",
+    "instructions": "Adivinhe a palavra oculta antes que o homem seja enforcado! Quanto mais difícil o nível, menos vidas você tem. Escolha sabiamente!",
+    "lives": "Vidas:"
+  },
+  "pt-br": {
+    "title": "Forca",
+    "highscores": "Melhores Pontuações",
+    "start": "Começar",
+    "restart": "Reiniciar",
+    "easy": "Fácil",
+    "medium": "Médio",
+    "hard": "Difícil",
+    "instructions": "Adivinhe a palavra oculta antes que o homem seja enforcado! Quanto mais difícil for o nível, menos vidas você terá. Escolha sabiamente!",
+    "lives": "Vidas:"
+  }
+}
