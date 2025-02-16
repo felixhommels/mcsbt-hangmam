@@ -6,21 +6,21 @@ import { useState } from "react";
 import "./difficulty.css";
 import { CirclePlay, RotateCcw } from "lucide-react";
 
-function Difficulty() {
-  // Difficulty Functions
-  const [difficulty, setDifficulty] = useState("easy");
+function Difficulty({ startGame, resetGame, handleDifficulty }) {
   const [isClicked, setIsClicked] = useState(false);
 
-  const handleDifficulty = (difficulty) => {
-    setDifficulty(difficulty);
+  const handleDifficultyClick = (difficultyLevel) => {
+    handleDifficulty(difficultyLevel);
+    setIsClicked(true);
   };
 
   const handleStart = () => {
-    console.log("Start");
+    startGame();
   };
 
   const handleRestart = () => {
-    console.log("Restart");
+    resetGame();
+    setIsClicked(false);
   };
 
   return (
@@ -29,27 +29,31 @@ function Difficulty() {
         <Col className="d-flex" id="difficulty-col">
           <Button
             id="easy-btn"
-            onClick={() => handleDifficulty("easy")}
+            onClick={() => handleDifficultyClick("easy")}
             className={!isClicked ? "pulsate" : ""}
           >
             Easy
           </Button>
           <Button
             id="medium-btn"
-            onClick={() => handleDifficulty("medium")}
+            onClick={() => handleDifficultyClick("medium")}
             className={!isClicked ? "pulsate" : ""}
           >
             Medium
           </Button>
           <Button
             id="hard-btn"
-            onClick={() => handleDifficulty("hard")}
+            onClick={() => handleDifficultyClick("hard")}
             className={!isClicked ? "pulsate" : ""}
           >
             Hard
           </Button>
-          <Button className="utility-btn">Start</Button>
-          <Button className="utility-btn">Restart</Button>
+          <Button className="utility-btn" onClick={handleStart}>
+            Start
+          </Button>
+          <Button className="utility-btn" onClick={handleRestart}>
+            Restart
+          </Button>
         </Col>
       </Row>
     </Container>
