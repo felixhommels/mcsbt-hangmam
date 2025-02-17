@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import languageText from "../../language_text.json";
 import imageMapping from "../../image_order.json";
 
-const Keyboard = ({ guessedLetters, onLetterClick }) => {
+const Keyboard = ({ guessedLetters, onLetterClick, disabled }) => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   return (
@@ -23,7 +23,7 @@ const Keyboard = ({ guessedLetters, onLetterClick }) => {
                     variant={
                       guessedLetters.includes(letter) ? "secondary" : "primary"
                     }
-                    disabled={guessedLetters.includes(letter)}
+                    disabled={disabled || guessedLetters.includes(letter)}
                     onClick={() => onLetterClick(letter)}
                     className="fw-bold text-uppercase"
                   >
@@ -75,21 +75,13 @@ function Hangman({
     });
   }, []);
 
-  const resetGame = () => {
-    setGuessedLetters([]);
-    setLives(11);
-    setGameStatus("loading");
-    getRandomWord().then((word) => {
-      setWord(word);
-      setGameStatus("playing");
-    });
-  };
-
   const getHangmanImage = (lives, difficulty) => {
     const difficultyImages = imageMapping[difficulty]?.images;
     if (!difficultyImages) return "./images/hangman11.png"; // fallback image
 
-    const imageName = difficultyImages[lives];
+    const maxLives = difficultyImages.length - 1;
+    const imageIndex = Math.max(0, maxLives - lives);
+    const imageName = difficultyImages[imageIndex];
     return imageName ? `./images/${imageName}` : "./images/hangman11.png";
   };
 
@@ -111,7 +103,11 @@ function Hangman({
         <Col className="d-flex flex-column align-items-center justify-content-center">
           <Row className="mb-3">
             <Col className="text-center">
-              {gameStatus === "loading" ? (
+              {gameStatus === "empty" ? (
+                <h1 id="word-display">
+                  {languageText[language].choose_difficulty}
+                </h1>
+              ) : gameStatus === "loading" ? (
                 <h1 id="word-display">Loading...</h1>
               ) : (
                 <h1 id="word-display">{maskedWord}</h1>
@@ -123,6 +119,7 @@ function Hangman({
               <Keyboard
                 guessedLetters={guessedLetters}
                 onLetterClick={handleLetterClick}
+                disabled={gameStatus === "empty"}
               />
             </Col>
           </Row>

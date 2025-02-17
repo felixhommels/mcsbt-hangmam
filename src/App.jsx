@@ -10,10 +10,11 @@ import Col from "react-bootstrap/Col";
 function App() {
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [word, setWord] = useState("");
-  const [lives, setLives] = useState(11);
-  const [gameStatus, setGameStatus] = useState("loading");
-  const [difficulty, setDifficulty] = useState("easy");
+  const [lives, setLives] = useState(0);
+  const [gameStatus, setGameStatus] = useState("empty");
+  const [difficulty, setDifficulty] = useState(null);
   const [language, setLanguage] = useState("en");
+  const [image, setImage] = useState("./images/hangman11.png");
 
   const getRandomWord = async (language) => {
     const baseUrl = "https://random-word-api.herokuapp.com/word";
@@ -31,32 +32,35 @@ function App() {
   };
 
   const startGame = () => {
-    getRandomWord(language).then((word) => {
-      setWord(word);
-      setGameStatus("playing");
-      setGuessedLetters([]);
-      setLives(11);
-    });
-  };
-
-  const resetGame = () => {
-    setGuessedLetters([]);
-    setLives(11);
-    setGameStatus("loading");
-    getRandomWord(language).then((word) => {
-      setWord(word);
-      setGameStatus("playing");
-    });
-  };
-
-  const handleDifficulty = (difficulty) => {
-    setDifficulty(difficulty);
     const lives = {
       easy: 11,
       medium: 8,
       hard: 5,
     };
     setLives(lives[difficulty]);
+    setGameStatus("loading");
+    getRandomWord(language)
+      .then((word) => {
+        setWord(word);
+        setGameStatus("playing");
+        setGuessedLetters([]);
+      })
+      .catch((error) => {
+        console.error("Start game error:", error);
+        setGameStatus("error");
+      });
+  };
+
+  const resetGame = () => {
+    setGuessedLetters([]);
+    setGameStatus("empty");
+    setWord("");
+    setLives(0);
+    setDifficulty(null);
+  };
+
+  const handleDifficulty = (difficulty) => {
+    setDifficulty(difficulty);
   };
 
   const handleLanguage = (language) => {
@@ -67,15 +71,19 @@ function App() {
     <Container fluid className="px-0">
       <Row>
         <Col>
-          <Header language={language} setLanguage={setLanguage} />
+          <Header
+            language={language}
+            setLanguage={setLanguage}
+            onReset={resetGame}
+          />
         </Col>
       </Row>
       <Row>
         <Col>
           <Difficulty
+            handleDifficulty={handleDifficulty}
             startGame={startGame}
             resetGame={resetGame}
-            handleDifficulty={handleDifficulty}
             language={language}
           />
         </Col>
@@ -93,6 +101,7 @@ function App() {
             setGameStatus={setGameStatus}
             getRandomWord={getRandomWord}
             language={language}
+            difficulty={difficulty}
           />
         </Col>
       </Row>

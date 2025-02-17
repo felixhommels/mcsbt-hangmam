@@ -8,7 +8,8 @@
     "medium": "Medium",
     "hard": "Hard",
     "instructions": "Guess the hidden word before the man is hanged! The harder the level, the fewer lives you have. Choose wisely!",
-    "lives": "Lives:"
+    "lives": "Lives:",
+    "choose_difficulty": "Choose difficulty and press Start"
   },
   "fr": {
     "title": "Pendu",
@@ -19,7 +20,8 @@
     "medium": "Moyen",
     "hard": "Difficile",
     "instructions": "Devinez le mot caché avant que l'homme ne soit pendu ! Plus le niveau est difficile, moins vous avez de vies. Choisissez judicieusement !",
-    "lives": "Vies:"
+    "lives": "Vies:",
+    "choose_difficulty": "Choisissez la difficulté et appuyez sur Commencer"
   },
   "es": {
     "title": "Ahorcado",
@@ -30,7 +32,8 @@
     "medium": "Medio",
     "hard": "Difícil",
     "instructions": "¡Adivina la palabra oculta antes de que el hombre sea ahorcado! Cuanto más difícil sea el nivel, menos vidas tendrás. ¡Elige sabiamente!",
-    "lives": "Vidas:"
+    "lives": "Vidas:",
+    "choose_difficulty": "Elige la dificultad y presiona Iniciar"
   },
   "it": {
     "title": "Impiccato",
@@ -41,7 +44,8 @@
     "medium": "Medio",
     "hard": "Difficile",
     "instructions": "Indovina la parola nascosta prima che l'uomo venga impiccato! Più il livello è difficile, meno vite hai. Scegli saggiamente!",
-    "lives": "Vite:"
+    "lives": "Vite:",
+    "choose_difficulty": "Scegli la difficoltà e premi Inizia"
   },
   "de": {
     "title": "Galgenmännchen",
@@ -52,7 +56,8 @@
     "medium": "Mittel",
     "hard": "Schwer",
     "instructions": "Errate das versteckte Wort, bevor der Mann gehängt wird! Je schwieriger das Level, desto weniger Leben hast du. Wähle weise!",
-    "lives": "Leben:"
+    "lives": "Leben:",
+    "choose_difficulty": "Wähle den Schwierigkeitsgrad und drücke Starten"
   },
   "pt": {
     "title": "Forca",
@@ -63,7 +68,8 @@
     "medium": "Médio",
     "hard": "Difícil",
     "instructions": "Adivinhe a palavra oculta antes que o homem seja enforcado! Quanto mais difícil o nível, menos vidas você tem. Escolha sabiamente!",
-    "lives": "Vidas:"
+    "lives": "Vidas:",
+    "choose_difficulty": "Escolha a dificuldade e pressione Começar"
   },
   "pt-br": {
     "title": "Forca",
@@ -74,6 +80,7 @@
     "medium": "Médio",
     "hard": "Difícil",
     "instructions": "Adivinhe a palavra oculta antes que o homem seja enforcado! Quanto mais difícil for o nível, menos vidas você terá. Escolha sabiamente!",
-    "lives": "Vidas:"
+    "lives": "Vidas:",
+    "choose_difficulty": "Escolha a dificuldade e pressione Começar"
   }
 }
