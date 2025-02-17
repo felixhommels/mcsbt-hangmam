@@ -7,11 +7,11 @@ import "./difficulty.css";
 import languageText from "../../language_text.json";
 
 function Difficulty({ startGame, resetGame, handleDifficulty, language }) {
-  const [isClicked, setIsClicked] = useState(false);
+  const [selectedDifficulty, setSelectedDifficulty] = useState(null);
 
   const handleDifficultyClick = (difficultyLevel) => {
     handleDifficulty(difficultyLevel);
-    setIsClicked(true);
+    setSelectedDifficulty(difficultyLevel);
   };
 
   const handleStart = () => {
@@ -20,7 +20,7 @@ function Difficulty({ startGame, resetGame, handleDifficulty, language }) {
 
   const handleRestart = () => {
     resetGame();
-    setIsClicked(false);
+    setSelectedDifficulty(null);
   };
 
   return (
@@ -30,21 +30,27 @@ function Difficulty({ startGame, resetGame, handleDifficulty, language }) {
           <Button
             id="easy-btn"
             onClick={() => handleDifficultyClick("easy")}
-            className={!isClicked ? "pulsate" : ""}
+            className={`difficulty-btn ${
+              !selectedDifficulty ? "pulsate" : ""
+            } ${selectedDifficulty === "easy" ? "active" : ""}`}
           >
             {languageText[language].easy}
           </Button>
           <Button
             id="medium-btn"
             onClick={() => handleDifficultyClick("medium")}
-            className={!isClicked ? "pulsate" : ""}
+            className={`difficulty-btn ${
+              !selectedDifficulty ? "pulsate" : ""
+            } ${selectedDifficulty === "medium" ? "active" : ""}`}
           >
             {languageText[language].medium}
           </Button>
           <Button
             id="hard-btn"
             onClick={() => handleDifficultyClick("hard")}
-            className={!isClicked ? "pulsate" : ""}
+            className={`difficulty-btn ${
+              !selectedDifficulty ? "pulsate" : ""
+            } ${selectedDifficulty === "hard" ? "active" : ""}`}
           >
             {languageText[language].hard}
           </Button>

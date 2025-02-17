@@ -62,6 +62,47 @@
   }
 }
 
+.difficulty-btn {
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.difficulty-btn.active {
+  opacity: 1 !important;
+  transform: scale(1.05);
+}
+
+#easy-btn.active {
+  background-color: green !important;
+}
+
+#medium-btn.active {
+  background-color: orange !important;
+}
+
+#hard-btn.active {
+  background-color: red !important;
+}
+
+#easy-btn:not(.active):hover,
+#easy-btn:not(.active):active {
+  background-color: green;
+}
+
+#medium-btn:not(.active):hover,
+#medium-btn:not(.active):active {
+  background-color: orange;
+}
+
+#hard-btn:not(.active):hover,
+#hard-btn:not(.active):active {
+  background-color: red;
+}
+
+.difficulty-btn:not(.active):hover {
+  opacity: 0.85;
+}
+
 .pulsate {
   animation: pulsate 1.2s infinite ease-in-out;
 }
