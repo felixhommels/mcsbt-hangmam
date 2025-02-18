@@ -6,6 +6,7 @@ import "./Hangman.css";
 import { useState, useEffect } from "react";
 import languageText from "../../language_text.json";
 import imageMapping from "../../image_order.json";
+import Modal from "react-bootstrap/Modal";
 
 const Keyboard = ({ guessedLetters, onLetterClick, disabled }) => {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -50,7 +51,10 @@ function Hangman({
   getRandomWord,
   language,
   difficulty,
+  resetGame,
 }) {
+  const [showModal, setShowModal] = useState(false);
+
   const maskedWord = word
     .split("")
     .map((letter) => (guessedLetters.includes(letter) ? letter : "_"))
@@ -62,9 +66,10 @@ function Hangman({
     }
     if (!word.includes(letter)) {
       setLives(lives - 1);
-    }
-    if (lives === 0) {
-      setGameStatus("lost"); //Maybe add a modal here
+      if (lives <= 1) {
+        setGameStatus("lost");
+        setShowModal(true);
+      }
     }
   };
 
@@ -132,6 +137,25 @@ function Hangman({
           </Row>
         </Col>
       </Row>
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>{languageText[language].game_over}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {languageText[language].word_was} {word}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="primary"
+            onClick={() => {
+              setShowModal(false);
+              resetGame();
+            }}
+          >
+            {languageText[language].play_again}
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 }

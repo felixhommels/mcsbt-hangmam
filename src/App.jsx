@@ -102,6 +102,7 @@ function App() {
             getRandomWord={getRandomWord}
             language={language}
             difficulty={difficulty}
+            resetGame={resetGame}
           />
         </Col>
       </Row>

@@ -9,7 +9,11 @@
     "hard": "Hard",
     "instructions": "Guess the hidden word before the man is hanged! The harder the level, the fewer lives you have. Choose wisely!",
     "lives": "Lives:",
-    "choose_difficulty": "Choose difficulty and press Start"
+    "choose_difficulty": "Choose difficulty and press Start",
+    "game_over": "Game Over",
+    "lost_message": "Sorry, you've run out of lives!",
+    "word_was": "The word was:",
+    "play_again": "Play Again"
   },
   "fr": {
     "title": "Pendu",
@@ -21,7 +25,11 @@
     "hard": "Difficile",
     "instructions": "Devinez le mot caché avant que l'homme ne soit pendu ! Plus le niveau est difficile, moins vous avez de vies. Choisissez judicieusement !",
     "lives": "Vies:",
-    "choose_difficulty": "Choisissez la difficulté et appuyez sur Commencer"
+    "choose_difficulty": "Choisissez la difficulté et appuyez sur Commencer",
+    "game_over": "Partie Terminée",
+    "lost_message": "Désolé, vous n'avez plus de vies !",
+    "word_was": "Le mot était :",
+    "play_again": "Rejouer"
   },
   "es": {
     "title": "Ahorcado",
@@ -33,7 +41,11 @@
     "hard": "Difícil",
     "instructions": "¡Adivina la palabra oculta antes de que el hombre sea ahorcado! Cuanto más difícil sea el nivel, menos vidas tendrás. ¡Elige sabiamente!",
     "lives": "Vidas:",
-    "choose_difficulty": "Elige la dificultad y presiona Iniciar"
+    "choose_difficulty": "Elige la dificultad y presiona Iniciar",
+    "game_over": "Juego Terminado",
+    "lost_message": "¡Lo siento, te has quedado sin vidas!",
+    "word_was": "La palabra era:",
+    "play_again": "Jugar de Nuevo"
   },
   "it": {
     "title": "Impiccato",
@@ -45,7 +57,11 @@
     "hard": "Difficile",
     "instructions": "Indovina la parola nascosta prima che l'uomo venga impiccato! Più il livello è difficile, meno vite hai. Scegli saggiamente!",
     "lives": "Vite:",
-    "choose_difficulty": "Scegli la difficoltà e premi Inizia"
+    "choose_difficulty": "Scegli la difficoltà e premi Inizia",
+    "game_over": "Game Over",
+    "lost_message": "Mi dispiace, hai esaurito le vite!",
+    "word_was": "La parola era:",
+    "play_again": "Gioca Ancora"
   },
   "de": {
     "title": "Galgenmännchen",
@@ -57,7 +73,11 @@
     "hard": "Schwer",
     "instructions": "Errate das versteckte Wort, bevor der Mann gehängt wird! Je schwieriger das Level, desto weniger Leben hast du. Wähle weise!",
     "lives": "Leben:",
-    "choose_difficulty": "Wähle den Schwierigkeitsgrad und drücke Starten"
+    "choose_difficulty": "Wähle den Schwierigkeitsgrad und drücke Starten",
+    "game_over": "Spiel Vorbei",
+    "lost_message": "Tut mir leid, du hast keine Leben mehr!",
+    "word_was": "Das Wort war:",
+    "play_again": "Nochmal Spielen"
   },
   "pt": {
     "title": "Forca",
@@ -69,7 +89,11 @@
     "hard": "Difícil",
     "instructions": "Adivinhe a palavra oculta antes que o homem seja enforcado! Quanto mais difícil o nível, menos vidas você tem. Escolha sabiamente!",
     "lives": "Vidas:",
-    "choose_difficulty": "Escolha a dificuldade e pressione Começar"
+    "choose_difficulty": "Escolha a dificuldade e pressione Começar",
+    "game_over": "Fim de Jogo",
+    "lost_message": "Desculpe, você ficou sem vidas!",
+    "word_was": "A palavra era:",
+    "play_again": "Jogar Novamente"
   },
   "pt-br": {
     "title": "Forca",
@@ -81,6 +105,10 @@
     "hard": "Difícil",
     "instructions": "Adivinhe a palavra oculta antes que o homem seja enforcado! Quanto mais difícil for o nível, menos vidas você terá. Escolha sabiamente!",
     "lives": "Vidas:",
-    "choose_difficulty": "Escolha a dificuldade e pressione Começar"
+    "choose_difficulty": "Escolha a dificuldade e pressione Começar",
+    "game_over": "Fim de Jogo",
+    "lost_message": "Desculpe, você ficou sem vidas!",
+    "word_was": "A palavra era:",
+    "play_again": "Jogar Novamente"
   }
 }
