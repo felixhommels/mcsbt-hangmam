@@ -79,8 +79,8 @@ function Header({ language, setLanguage, onReset, highscores = [] }) {
 
   return (
     <Container fluid className="navbar py-4">
-      <Row className="w-100">
-        <Col className="d-flex align-items-center">
+      <Row className="w-100 flex-column flex-md-row">
+        <Col className="d-flex align-items-center justify-content-left mb-3 mb-md-0">
           <img
             src="./images/welcome.gif"
             alt="welcomegif"
@@ -102,7 +102,7 @@ function Header({ language, setLanguage, onReset, highscores = [] }) {
             {languageText[language].title}
           </motion.h1>
         </Col>
-        <Col className="d-flex align-items-center justify-content-end">
+        <Col className="d-flex align-items-center justify-content-center justify-content-md-end">
           <Button
             variant="primary"
             onClick={handleShow}
