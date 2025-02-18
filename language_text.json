@@ -13,7 +13,15 @@
     "game_over": "Game Over",
     "lost_message": "Sorry, you've run out of lives!",
     "word_was": "The word was:",
-    "play_again": "Play Again"
+    "play_again": "Play Again",
+    "select_difficulty": "Please select a difficulty before starting the game.",
+    "rank": "Rank",
+    "difficulty": "Difficulty",
+    "word": "Word",
+    "date": "Date",
+    "noHighscores": "No highscores yet!",
+    "victory": "Victory!",
+    "congratulations": "Congratulations! You won with"
   },
   "fr": {
     "title": "Pendu",
@@ -29,7 +37,15 @@
     "game_over": "Partie Terminée",
     "lost_message": "Désolé, vous n'avez plus de vies !",
     "word_was": "Le mot était :",
-    "play_again": "Rejouer"
+    "play_again": "Rejouer",
+    "select_difficulty": "Veuillez sélectionner une difficulté avant de commencer le jeu.",
+    "rank": "Rang",
+    "difficulty": "Difficulté",
+    "word": "Mot",
+    "date": "Date",
+    "noHighscores": "Aucun score haut !",
+    "victory": "Victoire !",
+    "congratulations": "Félicitations ! Vous avez gagné avec"
   },
   "es": {
     "title": "Ahorcado",
@@ -45,7 +61,15 @@
     "game_over": "Juego Terminado",
     "lost_message": "¡Lo siento, te has quedado sin vidas!",
     "word_was": "La palabra era:",
-    "play_again": "Jugar de Nuevo"
+    "play_again": "Jugar de Nuevo",
+    "select_difficulty": "Por favor, seleccione una dificultad antes de comenzar el juego.",
+    "rank": "Rango",
+    "difficulty": "Dificultad",
+    "word": "Palabra",
+    "date": "Fecha",
+    "noHighscores": "¡No hay puntuaciones altas!",
+    "victory": "¡Victoria!",
+    "congratulations": "¡Felicitaciones! Ganaste con"
   },
   "it": {
     "title": "Impiccato",
@@ -61,7 +85,15 @@
     "game_over": "Game Over",
     "lost_message": "Mi dispiace, hai esaurito le vite!",
     "word_was": "La parola era:",
-    "play_again": "Gioca Ancora"
+    "play_again": "Gioca Ancora",
+    "select_difficulty": "Seleziona una difficoltà prima di iniziare il gioco.",
+    "rank": "Posizione",
+    "difficulty": "Difficoltà",
+    "word": "Parola",
+    "date": "Data",
+    "noHighscores": "Nessun punteggio ancora!",
+    "victory": "Vittoria!",
+    "congratulations": "Congratulazioni! Hai vinto con"
   },
   "de": {
     "title": "Galgenmännchen",
@@ -77,7 +109,15 @@
     "game_over": "Spiel Vorbei",
     "lost_message": "Tut mir leid, du hast keine Leben mehr!",
     "word_was": "Das Wort war:",
-    "play_again": "Nochmal Spielen"
+    "play_again": "Nochmal Spielen",
+    "select_difficulty": "Bitte wählen Sie eine Schwierigkeit, bevor Sie das Spiel starten.",
+    "rank": "Rang",
+    "difficulty": "Schwierigkeit",
+    "word": "Wort",
+    "date": "Datum",
+    "noHighscores": "Noch keine Bestleistungen!",
+    "victory": "Sieg!",
+    "congratulations": "Glückwunsch! Du hast gewonnen mit"
   },
   "pt": {
     "title": "Forca",
@@ -93,7 +133,15 @@
     "game_over": "Fim de Jogo",
     "lost_message": "Desculpe, você ficou sem vidas!",
     "word_was": "A palavra era:",
-    "play_again": "Jogar Novamente"
+    "play_again": "Jogar Novamente",
+    "select_difficulty": "Por favor, selecione uma dificuldade antes de começar o jogo.",
+    "rank": "Posição",
+    "difficulty": "Dificuldade",
+    "word": "Palavra",
+    "date": "Data",
+    "noHighscores": "Ainda não há pontuações!",
+    "victory": "Vitória!",
+    "congratulations": "Parabéns! Você venceu com"
   },
   "pt-br": {
     "title": "Forca",
@@ -109,6 +157,14 @@
     "game_over": "Fim de Jogo",
     "lost_message": "Desculpe, você ficou sem vidas!",
     "word_was": "A palavra era:",
-    "play_again": "Jogar Novamente"
+    "play_again": "Jogar Novamente",
+    "select_difficulty": "Por favor, selecione uma dificuldade antes de começar o jogo.",
+    "rank": "Posição",
+    "difficulty": "Dificuldade",
+    "word": "Palavra",
+    "date": "Data",
+    "noHighscores": "Ainda não há pontuações!",
+    "victory": "Vitória!",
+    "congratulations": "Parabéns! Você venceu com"
   }
 }

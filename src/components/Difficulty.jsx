@@ -15,6 +15,10 @@ function Difficulty({ startGame, resetGame, handleDifficulty, language }) {
   };
 
   const handleStart = () => {
+    if (!selectedDifficulty) {
+      alert(languageText[language].select_difficulty);
+      return;
+    }
     startGame();
   };
 
@@ -25,8 +29,12 @@ function Difficulty({ startGame, resetGame, handleDifficulty, language }) {
 
   return (
     <Container fluid id="difficulty-container">
-      <Row className="w-100" id="difficulty-row">
-        <Col className="d-flex" id="difficulty-col">
+      <Row className="w-100 justify-content-center" id="difficulty-row">
+        <Col
+          xs={12}
+          className="d-flex flex-wrap gap-3 justify-content-space-around"
+          id="difficulty-col"
+        >
           <Button
             id="easy-btn"
             onClick={() => handleDifficultyClick("easy")}

@@ -22,7 +22,7 @@ const languages = [
   { code: "pt-br", name: "Português", flag: "🇧🇷" },
 ];
 
-function Header({ language, setLanguage, onReset }) {
+function Header({ language, setLanguage, onReset, highscores = [] }) {
   //   Audio Functions
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio("./audio/hangman_audio.mp3"));
@@ -40,12 +40,10 @@ function Header({ language, setLanguage, onReset }) {
     setIsPlaying(!isPlaying);
   };
 
-  //   Off Canvas Functions
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // Language Functions
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   const handleLanguageChange = (language) => {
@@ -53,6 +51,31 @@ function Header({ language, setLanguage, onReset }) {
     setLanguage(language.code);
     onReset();
   };
+
+  function renderHighscores() {
+    return (
+      <table className="table">
+        <thead>
+          <tr>
+            <th>{languageText[language].rank}</th>
+            <th>{languageText[language].difficulty}</th>
+            <th>{languageText[language].lives}</th>
+            <th>{languageText[language].word}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {highscores.map((score, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
+              <td>{score.difficulty}</td>
+              <td>{score.remainingLives}</td>
+              <td>{score.word}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+  }
 
   return (
     <Container fluid className="navbar py-4">
@@ -93,9 +116,7 @@ function Header({ language, setLanguage, onReset }) {
                 {languageText[language].highscores}
               </Offcanvas.Title>
             </Offcanvas.Header>
-            <Offcanvas.Body>
-              {/* Add your highscores content here with element creation */}
-            </Offcanvas.Body>
+            <Offcanvas.Body>{renderHighscores()}</Offcanvas.Body>
           </Offcanvas>
           <Dropdown>
             <Dropdown.Toggle className="language-dropdown">

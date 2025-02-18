@@ -27,6 +27,11 @@ const Keyboard = ({ guessedLetters, onLetterClick, disabled }) => {
                     disabled={disabled || guessedLetters.includes(letter)}
                     onClick={() => onLetterClick(letter)}
                     className="fw-bold text-uppercase"
+                    style={{
+                      width: "3rem",
+                      height: "3rem",
+                      fontSize: "1.25rem",
+                    }}
                   >
                     {letter}
                   </Button>
@@ -52,6 +57,9 @@ function Hangman({
   language,
   difficulty,
   resetGame,
+  wordIsGuessed,
+  setWordIsGuessed,
+  updateHighscores,
 }) {
   const [showModal, setShowModal] = useState(false);
 
@@ -79,6 +87,21 @@ function Hangman({
       setGameStatus("playing");
     });
   }, []);
+
+  useEffect(() => {
+    if (word && gameStatus === "playing") {
+      const isWordGuessed = word
+        .split("")
+        .every((letter) => guessedLetters.includes(letter));
+
+      if (isWordGuessed) {
+        setWordIsGuessed(true);
+        setGameStatus("won");
+        setShowModal(true);
+        updateHighscores(difficulty, lives);
+      }
+    }
+  }, [guessedLetters, word]);
 
   const getHangmanImage = (lives, difficulty) => {
     const difficultyImages = imageMapping[difficulty]?.images;
@@ -137,12 +160,23 @@ function Hangman({
           </Row>
         </Col>
       </Row>
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+      <Modal
+        className="modal-container"
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        centered
+      >
         <Modal.Header closeButton>
-          <Modal.Title>{languageText[language].game_over}</Modal.Title>
+          <Modal.Title>
+            {gameStatus === "won"
+              ? languageText[language].victory
+              : languageText[language].game_over}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {languageText[language].word_was} {word}
+          {gameStatus === "won"
+            ? `${languageText[language].congratulations} ${languageText[language].lives} ${lives}`
+            : `${languageText[language].word_was} ${word}`}
         </Modal.Body>
         <Modal.Footer>
           <Button

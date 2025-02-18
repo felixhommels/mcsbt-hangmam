@@ -14,7 +14,37 @@ function App() {
   const [gameStatus, setGameStatus] = useState("empty");
   const [difficulty, setDifficulty] = useState(null);
   const [language, setLanguage] = useState("en");
-  const [image, setImage] = useState("./images/hangman11.png");
+  const [wordIsGuessed, setWordIsGuessed] = useState(false);
+  const [highscores, setHighscores] = useState(() => {
+    const savedScores = localStorage.getItem("hangmanHighscores");
+    return savedScores ? JSON.parse(savedScores) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("hangmanHighscores", JSON.stringify(highscores));
+  }, [highscores]);
+
+  const updateHighscores = (difficulty, remainingLives) => {
+    const score = {
+      difficulty,
+      remainingLives,
+      word,
+    };
+
+    const newHighscores = [...highscores, score]
+      .sort((a, b) => {
+        if (a.difficulty !== b.difficulty) {
+          return (
+            ["easy", "medium", "hard"].indexOf(b.difficulty) -
+            ["easy", "medium", "hard"].indexOf(a.difficulty)
+          );
+        }
+        return b.remainingLives - a.remainingLives;
+      })
+      .slice(0, 10);
+
+    setHighscores(newHighscores);
+  };
 
   const getRandomWord = async (language) => {
     const baseUrl = "https://random-word-api.herokuapp.com/word";
@@ -57,14 +87,11 @@ function App() {
     setWord("");
     setLives(0);
     setDifficulty(null);
+    setWordIsGuessed(false);
   };
 
   const handleDifficulty = (difficulty) => {
     setDifficulty(difficulty);
-  };
-
-  const handleLanguage = (language) => {
-    setLanguage(language);
   };
 
   return (
@@ -75,6 +102,7 @@ function App() {
             language={language}
             setLanguage={setLanguage}
             onReset={resetGame}
+            highscores={highscores}
           />
         </Col>
       </Row>
@@ -103,6 +131,9 @@ function App() {
             language={language}
             difficulty={difficulty}
             resetGame={resetGame}
+            updateHighscores={updateHighscores}
+            wordIsGuessed={wordIsGuessed}
+            setWordIsGuessed={setWordIsGuessed}
           />
         </Col>
       </Row>
