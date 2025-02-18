@@ -115,20 +115,24 @@ function Hangman({
 
   return (
     <Container fluid>
-      <Row id="description" className="text-center">
+      <Row id="description" className="text-center mb-3">
         <Col>
           <h2 id="instructions-text">{languageText[language].instructions}</h2>
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className="gy-4">
+        <Col xs={12} md={6} className="text-center">
           <img
             src={getHangmanImage(lives, difficulty)}
             alt={`hangman with ${lives} lives remaining`}
-            style={{ width: "80%" }}
+            style={{ maxWidth: "100%", height: "auto" }}
           />
         </Col>
-        <Col className="d-flex flex-column align-items-center justify-content-center">
+        <Col
+          xs={12}
+          md={6}
+          className="d-flex flex-column align-items-center justify-content-center"
+        >
           <Row className="mb-3">
             <Col className="text-center">
               {gameStatus === "empty" ? (
