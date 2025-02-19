@@ -7,10 +7,11 @@
   font-style: italic;
 }
 
-.modal-container {
-  font-family: "Open Sans", sans-serif;
+.modal-text {
+  font-family: "Open Sans", sans-serif !important;
   border-radius: 10px;
   padding: 20px;
+  display: inline-block;
 }
 
 #description {

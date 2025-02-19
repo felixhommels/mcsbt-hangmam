@@ -164,12 +164,7 @@ function Hangman({
           </Row>
         </Col>
       </Row>
-      <Modal
-        className="modal-container"
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        centered
-      >
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>
             {gameStatus === "won"
@@ -177,10 +172,24 @@ function Hangman({
               : languageText[language].game_over}
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          {gameStatus === "won"
-            ? `${languageText[language].congratulations} ${languageText[language].lives} ${lives}`
-            : `${languageText[language].word_was} ${word}`}
+        <Modal.Body className="modal-text">
+          {gameStatus === "won" ? (
+            <>
+              {`${languageText[language].congratulations} ${languageText[language].lives} ${lives}.`}
+              <br />
+              <strong className="modal-text">
+                {languageText[language].press_restart}
+              </strong>
+            </>
+          ) : (
+            <>
+              {`${languageText[language].word_was} ${word}.`}
+              <br />
+              <strong className="modal-text">
+                {languageText[language].press_restart}
+              </strong>
+            </>
+          )}
         </Modal.Body>
         <Modal.Footer>
           <Button

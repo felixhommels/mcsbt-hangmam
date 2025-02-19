@@ -21,7 +21,8 @@
     "date": "Date",
     "noHighscores": "No highscores yet!",
     "victory": "Victory!",
-    "congratulations": "Congratulations! You won with"
+    "congratulations": "Congratulations! You won with",
+    "press_restart": "Press Restart in the game interface, select a level and press Start to play again"
   },
   "fr": {
     "title": "Pendu",
@@ -45,7 +46,8 @@
     "date": "Date",
     "noHighscores": "Aucun score haut !",
     "victory": "Victoire !",
-    "congratulations": "Félicitations ! Vous avez gagné avec"
+    "congratulations": "Félicitations ! Vous avez gagné avec",
+    "press_restart": "Appuyez sur Recommencer dans l'interface de jeu, sélectionnez un niveau et appuyez sur Commencer pour jouer à nouveau"
   },
   "es": {
     "title": "Ahorcado",
@@ -69,7 +71,8 @@
     "date": "Fecha",
     "noHighscores": "¡No hay puntuaciones altas!",
     "victory": "¡Victoria!",
-    "congratulations": "¡Felicitaciones! Ganaste con"
+    "congratulations": "¡Felicitaciones! Ganaste con",
+    "press_restart": "Presiona Reiniciar en la interfaz de juego, selecciona un nivel y presiona Iniciar para jugar de nuevo"
   },
   "it": {
     "title": "Impiccato",
@@ -93,7 +96,8 @@
     "date": "Data",
     "noHighscores": "Nessun punteggio ancora!",
     "victory": "Vittoria!",
-    "congratulations": "Congratulazioni! Hai vinto con"
+    "congratulations": "Congratulazioni! Hai vinto con",
+    "press_restart": "Premi Ricomincia nell'interfaccia di gioco, seleziona un livello e premi Inizia per giocare di nuovo"
   },
   "de": {
     "title": "Galgenmännchen",
@@ -117,7 +121,8 @@
     "date": "Datum",
     "noHighscores": "Noch keine Bestleistungen!",
     "victory": "Sieg!",
-    "congratulations": "Glückwunsch! Du hast gewonnen mit"
+    "congratulations": "Glückwunsch! Du hast gewonnen mit",
+    "press_restart": "Drücke Neustart in der Spieloberfläche, wähle einen Schwierigkeitsgrad und drücke Starten, um erneut zu spielen"
   },
   "pt": {
     "title": "Forca",
@@ -141,7 +146,8 @@
     "date": "Data",
     "noHighscores": "Ainda não há pontuações!",
     "victory": "Vitória!",
-    "congratulations": "Parabéns! Você venceu com"
+    "congratulations": "Parabéns! Você venceu com",
+    "press_restart": "Pressione Reiniciar na interface de jogo, selecione um nível e pressione Iniciar para jogar novamente"
   },
   "pt-br": {
     "title": "Forca",
@@ -165,6 +171,7 @@
     "date": "Data",
     "noHighscores": "Ainda não há pontuações!",
     "victory": "Vitória!",
-    "congratulations": "Parabéns! Você venceu com"
+    "congratulations": "Parabéns! Você venceu com",
+    "press_restart": "Pressione Reiniciar na interface de jogo, selecione um nível e pressione Iniciar para jogar novamente"
   }
 }
